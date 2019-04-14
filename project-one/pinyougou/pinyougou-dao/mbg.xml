@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 配置pojo的序列化 -->
+       <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/pinyougou?useSSL=false"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!--javaBean生成的位置-->
+        <javaModelGenerator targetPackage="com.pinyougou.pojo" targetProject="G:\workspaces\pyg\project-one\pinyougou\pinyougou-pojo\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--指定sql映射文件生成的位置-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject="G:\workspaces\pyg\project-one\pinyougou\pinyougou-dao\src\main\resources\com\pinyougou">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!--指定dao接口生成的位置，mapper-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.pinyougou.mapper"  targetProject="G:\workspaces\pyg\project-one\pinyougou\pinyougou-dao\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!--table 指定每个表的生成策略-->
+        <table tableName="tb_address" domainObjectName="TbAddress"/>
+        <table tableName="tb_areas" domainObjectName="TbAreas"/>
+        <table tableName="tb_brand" domainObjectName="TbBrand"/>
+        <table tableName="tb_cities" domainObjectName="TbCities"/>
+        <table tableName="tb_content" domainObjectName="TbContent"/>
+        <table tableName="tb_content_category" domainObjectName="TbContentCategory"/>
+        <table tableName="tb_freight_template" domainObjectName="TbFreightTemplate"/>
+        <table tableName="tb_goods" domainObjectName="TbGoods"/>
+        <table tableName="tb_goods_desc" domainObjectName="TbGoodsDesc"/>
+        <table tableName="tb_item" domainObjectName="TbItem"/>
+        <table tableName="tb_item_cat" domainObjectName="TbItemCat"/>
+        <table tableName="tb_order" domainObjectName="TbOrder"/>
+        <table tableName="tb_order_item" domainObjectName="TbOrderItem"/>
+        <table tableName="tb_pay_log" domainObjectName="TbPayLog"/>
+        <table tableName="tb_provinces" domainObjectName="TbProvinces"/>
+        <table tableName="tb_seckill_goods" domainObjectName="TbSeckillGoods"/>
+        <table tableName="tb_seckill_order" domainObjectName="TbSeckillOrder"/>
+        <table tableName="tb_seller" domainObjectName="TbSeller"/>
+        <table tableName="tb_specification" domainObjectName="TbSpecification"/>
+        <table tableName="tb_specification_option" domainObjectName="TbSpecificationOption"/>
+        <table tableName="tb_type_template" domainObjectName="TbTypeTemplate"/>
+        <table tableName="tb_user" domainObjectName="TbUser"/>
+    </context>
+</generatorConfiguration>
